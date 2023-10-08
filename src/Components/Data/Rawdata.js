@@ -1,11 +1,10 @@
-import { totalAssets,stageData } from "./stages";
+import { totalAssets, stageData } from "./stages";
 import { sampleData } from "./sample";
-
 
 export const dataForTotalAssets = {
   datasets: [
     {
-      label: ["Tangibleeeeeeeee"],
+      label: ["Tangible"],
       data: totalAssets,
       backgroundColor: ["rgba(255, 99, 132, 1)", "rgba(255, 205, 86, 1)"],
     },
@@ -31,8 +30,8 @@ export const OptionForTotalAssets = {
       tick: {
         type: "bar",
         min: 1,
-        max: 50,
-        stepsize: 5,
+        max: 30,
+        stepsize: 10,
       },
     },
     x: {
@@ -70,11 +69,10 @@ export const dataForD = {
   ],
 };
 
-
 //Horizontal Bar Chart
 
 export const optionsForHBar = {
-  indexAxis: 'y',
+  indexAxis: "y",
   elements: {
     bar: {
       borderWidth: 2,
@@ -83,25 +81,25 @@ export const optionsForHBar = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'right',
+      position: "right",
     },
     title: {
       display: true,
-      text: 'Chart.js Horizontal Bar Chart',
+      text: "Chart.js Horizontal Bar Chart",
     },
   },
 };
 
-const labels =stageData.map(item=>item.stage_name)
-const labels_sample =sampleData.map(item=>item.stage_name)
+const labels = stageData.map((item) => item.stage_name);
+const labels_sample = sampleData.map((item) => item.stage_name);
 export const dataForHBar = {
   labels,
   datasets: [
     {
       label: "Dataset 1",
-      data: stageData.map((item)=>item.totalNumberOfAssets),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      data: stageData.map((item) => item.totalNumberOfAssets),
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
     // {
     //   label: 'Dataset 2',
