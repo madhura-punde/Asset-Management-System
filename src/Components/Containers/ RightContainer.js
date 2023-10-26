@@ -1,71 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { sampleData } from "../Data/sample";
+import { useNavigate } from "react-router-dom";
 
 function RightContainer() {
-  // const AG = [...new Set(sampleData.map((item) => item["Assignment Group"]))];
-  // const DEPT = [...new Set(sampleData.map((item) => item.Department))];
-  // console.log({ AG, DEPT });
+  const [group, setGroup] = useState();
+  const navigate = useNavigate();
 
-  // const OptionsForDropDown = (optionName) => {
-  //   const AG = [...new Set(sampleData.map((item) => item[optionName]))];
+  const navigateWithSomeOption = (event) => {
+    setGroup(event.target.value);
+    console.log(event.target.value);
+    navigate(`/${event.target.value}`);
+  };
 
-  //   return AG.map((item, index) => (
-  //     <li key={index}>
-  //       <a className="dropdown-item" href="#">
-  //         {item}
-  //       </a>
-  //     </li>
-  //   ));
-  // };
-
-  // const generateOptions = (optionName) => {
-  //   const AG = [...new Set(sampleData.map((item) => item[optionName]))];
-  //   return AG.map((item, index) => (
-  //     <option key={index} value={item}>
-  //       {item}
-  //     </option>
-  //   ));
-  // };
+  const generateOptions = (optionName) => {
+    const AG = [...new Set(sampleData.map((item) => item[optionName]))];
+    return AG.map((item, index) => (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    ));
+  };
 
   return (
     <>
       <aside className="mini-left-block">
         <div className="container">
+          <br />
           <div>Filter</div>
 
-          <select className="">
+          <select onChange={navigateWithSomeOption}>
             <option>Select Location</option>
-            {/* {generateOptions("Physical Location")} */}
+            {generateOptions("Physical Location")}
           </select>
 
+          <br />
           <br />
 
           <label>Select Asset Type</label>
           <br />
-          <select className="">
+          <select onChange={navigateWithSomeOption}>
             <option>Asset Type </option>
             <option>Hardware</option>
             <option>Software</option>
           </select>
+
+          <br />
           <br />
 
           <label>Select Department</label>
           <div className="dropdown">
-            <select className="">
+            <select onChange={navigateWithSomeOption}>
               <option>Select Department</option>
-              {/* {generateOptions("Department")} */}
+              {generateOptions("Department")}
+            </select>
+          </div>
+
+          <br />
+          {/* Assignment Group DropDown */}
+          <label>Select Assignment Group</label>
+
+          <div className="dropdown">
+            <select value={group} onChange={navigateWithSomeOption}>
+              <option>Select Assignment Group</option>
+
+              {generateOptions("Assignment Group")}
             </select>
           </div>
           <br />
-
-          <label>Select Assignment Group</label>
-          <div className="dropdown">
-            <select className="">
-              <option>Select Assignment Group</option>
-              {/* {generateOptions("Assignment Group")} */}
-            </select>
-          </div>
-
           <label>Asset ID</label>
 
           <br />

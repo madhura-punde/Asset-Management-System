@@ -1,11 +1,17 @@
 import React from "react";
 import Sidebar from "./Sidebar";
+import { FaLaptopCode } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <nav className="navbar navbar-light" style={{ backgroundColor: "#1abc9c" }}>
       <Sidebar />
-      <a className="navbar-brand">Asset Management</a>
+      <Link to={"/"}>
+        <button className="btn btn-primary">
+          <FaLaptopCode />
+        </button>
+      </Link>
 
       <form className="form-inline">
         <input

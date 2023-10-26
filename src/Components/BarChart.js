@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import RightContainerR from "./Containers/RightContainerR";
 
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -28,6 +29,7 @@ function BarChart() {
 
           {/* main dashboar */}
           <section className="col-lg-9">
+            <RightContainerR />
             <LeftContainer />
           </section>
         </div>

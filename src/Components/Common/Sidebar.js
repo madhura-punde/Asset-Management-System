@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { stageDetailsTRY } from "../Data/functionality";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { sampleData } from "../Data/sample";
 
 function Sidebar() {
-  function generateOptions() {
-    
-    return sampleData.map((item, index) => (
-      <a
-        href="#"
-        className="list-group-item list-group-item-action"
-        key={index}
-      >
-        {item["Assignment Group"]}
-      </a>
-    ));
-  }
+  const [stageOptions, setOptions] = useState({});
+  const stageData = useSelector((state) => state.assetData);
+
+  useEffect(() => {
+    const { counterForStage } = stageDetailsTRY(stageData);
+    // console.log(Object.keys(counterForStage));
+    setOptions(Object.keys(counterForStage));
+  }, []);
+
+  const displayStagesInList = () => {
+    stageOptions.map((optionk) => <li key={optionk}>{optionk}</li>);
+  };
 
   return (
     <div>
@@ -46,20 +47,10 @@ function Sidebar() {
           ></button>
         </div>
         <div className="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </div>
+          <div>Some Random Text</div>
 
           <div className="list-group list-group-flush">
-            <a
-              href="#"
-              className="list-group-item list-group-item-action active"
-              aria-current="true"
-            >
-              The current link item
-            </a>
-            {generateOptions()}
+            {/* <ul>{!stageOptions ? "Loading" : displayStagesInList()}</ul> */}
           </div>
         </div>
       </div>

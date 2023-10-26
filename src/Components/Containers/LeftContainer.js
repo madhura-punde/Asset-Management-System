@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
+import { useSelector } from "react-redux";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-import stageDetails from "../Data/functionality";
+import stageDetailsTRY from "../Data/functionality";
 import { UserContext } from "../../App";
 import {
   optionsForHorizontalBarGraph,
@@ -11,10 +12,11 @@ import {
 function LeftContainer() {
   let [cardData, setCardData] = useState({});
   let [graphData, setGraphData] = useState({});
-  let contextvalue = useContext(UserContext);
+  let assetDataTaken = useSelector((state) => state.assetData);
+  // let contextvalue = useContext(UserContext);
 
   useEffect(() => {
-    const k = stageDetails();
+    const k = stageDetailsTRY(assetDataTaken);
     console.log(k);
     setGraphData(k.count);
     setCardData(k.counterForStage);
@@ -22,44 +24,11 @@ function LeftContainer() {
     // console.log(graphData);
   }, []);
 
-  useEffect(() => {
-    // console.log(cardData);
-    console.log(graphData);
-    // ShowdataSet(cardData);
-  }, [graphData, cardData]);
-
-  const DisplayStagedDataWithNewSet = (key, value) => {
-    // console.log(key, value);
-    return (
-      <Link to={`/${key}`} key={key} className="customCardClass">
-        <div className="card" style={{ width: "20rem", height: "8rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">{key}</h5>
-            <h4 className="card-text">
-              <p className="stageNumber">{value}</p>
-            </h4>
-          </div>
-        </div>
-      </Link>
-    );
-  };
-
-  const ShowdataSet = (cardData) => {
-    console.log(cardData);
-
-    // for (const [key, value] of Object.entries(cardData)) {
-    //   // console.log(`key: ${key}, value: ${value}`);
-    //   <div className="displayStages">
-    //     {DisplayStagedDataWithNewSet(key, value)}
-    //   </div>;
-    // }
-
-    const newCardArray = Object.entries(cardData).map(([key, value]) => {
-      return DisplayStagedDataWithNewSet(key, value);
-    });
-
-    return newCardArray;
-  };
+  // useEffect(() => {
+  //   // console.log(cardData);
+  //   console.log(graphData);
+  //   // ShowdataSet(cardData);
+  // }, [graphData, cardData]);
 
   // Bar graph data
 
@@ -103,10 +72,6 @@ function LeftContainer() {
   return (
     <>
       <br />
-
-      <div className="displayStages">
-        {!cardData ? <h4>"Loading"</h4> : ShowdataSet(cardData)}
-      </div>
 
       <div className="chart">
         <Doughnut data={dataD} options={optionsForDoughnutGraph} />
