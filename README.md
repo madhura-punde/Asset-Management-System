@@ -21,8 +21,6 @@ asset.
 - Flow in ALMP 💻:-
   Planning-> Procurement- > Distribution-> Operations-> Maintenance-> Disposal
 
-
-
 ### build with
 
 1. Fronyend - ReactJS, Bootstrap
@@ -40,9 +38,7 @@ Final Overview
 
 ### Author
 
+-Website - [Sachin Kadam]
+
 - Website - [Madhura Punde](https://github.com/madhura-punde)
 - LinkedIn - [@madhurapunde](https://in.linkedin.com/in/madhura-punde-22a6781aa)
-
-
-force = true
-legacy-peer-deps = true
