@@ -1,0 +1,46 @@
+import mongoose from "mongoose";
+
+const assetDataSchema = new mongoose.Schema({
+  assetID: { type: Number, required: true },
+  monitoringStatus: { type: String},
+  complianceStatus: { type: String  },
+  assignmentGroup: { type: String },
+  hostname: { type: String },
+  department: { type: String},
+  manufacturer: { type: String },
+  model: { type: String },
+  category: { type: String },
+  serialNumber: { type: String },
+  partNumber: { type: String },
+  warrantyStartDate: { type: String },
+  warrantyEndDate: { type: String },
+  eos: { type: String },
+  eol: { type: String },
+  assetTag: { type: String,},
+  physicalLocation: { type: String },
+  rackNumber: { type: Number },
+  rackUnit: { type: Number },
+  osName: { type: String },
+  osVersion: { type: Number,},
+  licensingDetails: { type: String },
+  cpu: { type: Number },
+  ram: { type: Number },
+  rom: { type: Number },
+  privateIP: { type: String },
+  publicIP: { type: String },
+  macAddress: { type: String },
+  dateOfPurchase: { type: String },
+  purchasePrice: { type: Number },
+  leaseBeginDate: { type: String },
+  leaseExpiry: { type: String },
+  leasingCompany: { type: String },
+  monthlyLease: { type: Number },
+  insuranceDetails: { type: String },
+  policyNumber: { type: String },
+  insuranceStartDate: { type: String },
+  insuranceEndDate: { type: String },
+});
+
+const AssetData = mongoose.model("asset-data", assetDataSchema);
+
+export default AssetData;
