@@ -38,7 +38,6 @@ Final Overview
 
 ### Author
 
--Website - [Sachin Kadam]
-
+- Website - [Sachin Kadam]
 - Website - [Madhura Punde](https://github.com/madhura-punde)
 - LinkedIn - [@madhurapunde](https://in.linkedin.com/in/madhura-punde-22a6781aa)
