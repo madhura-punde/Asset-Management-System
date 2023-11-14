@@ -90,12 +90,12 @@ export const updateAssignmentGroup = async (req, res) => {
 export const countAPI = async (req, res) => {
   try {
     const assignmentGroups = [
-      "Procurement",
       "Business Planning",
-      "Disposal",
+      "Procurement",
       "Distribution",
       "Operations",
       "Maintenance",
+      "Disposal",
     ];
     const counts = {};
 

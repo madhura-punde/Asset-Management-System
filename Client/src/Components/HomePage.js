@@ -49,6 +49,12 @@ function HomePage() {
           <section className="col-lg-9">
             <MiniDashboard />
             <br />
+            <p>
+              <b>
+                Planning-&gt; Procurement- &gt; Distribution-&gt;
+                Operations-&gt; Maintenance-&gt; Disposal
+              </b>
+            </p>
             <Visualization />
           </section>
         </div>

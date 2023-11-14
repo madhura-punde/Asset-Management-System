@@ -56,3 +56,7 @@ a:nth-child(even) {
   flex-direction: column;
   row-gap: 5em;
 }
+
+.nextStage-btn {
+  margin-left: 315px;
+}

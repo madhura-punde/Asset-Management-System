@@ -8,6 +8,7 @@ import StageWise from "./Components/Containers/StageWise";
 import store from "./redux/store";
 import { Provider } from "react-redux";
 import AssetDetails from "./Components/Containers/AssetDetails";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/:stagename/:assetid" element={<AssetDetails />} />
         </Routes>
         <br />
+        <ToastContainer />
         <Footer />
       </Provider>
     </>

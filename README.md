@@ -23,21 +23,18 @@ asset.
 
 ### build with
 
-1. Fronyend - ReactJS, Bootstrap
+1. Fronyend - ReactJS, Bootstrap, Redux
 2. Backend - NodeJS, ExpressJS, Mongodb Atlas
 
 ### view
 
 Final Overview
 
-1. Graph data need to be fixed.-->done
-2. UI fixes- Header and Footer--->Header almost done
-3. Filter data with redux sync-->done
-4. Integrate notification into click event----> will do at last
-5. button should be apperaed in same line with asset id
-
 ### Author
 
-- Website - [Sachin Kadam]
-- Website - [Madhura Punde](https://github.com/madhura-punde)
+- LinkedIn - [Sachin Kadam](https://www.linkedin.com/in/sachin-kadam-2356781aa)
 - LinkedIn - [@madhurapunde](https://in.linkedin.com/in/madhura-punde-22a6781aa)
+- Website - [Madhura Punde](https://github.com/madhura-punde)
+
+1. filter submit
+2. HOST IT.

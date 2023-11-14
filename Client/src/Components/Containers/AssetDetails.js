@@ -5,6 +5,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import assetImage from "../../Assets/assetImage.jpg";
 import CustomSpinner from "../Common/CustomSpinner";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Icons Import
 import { FaLaptopCode } from "react-icons/fa";
@@ -178,29 +180,36 @@ function AssetDetails() {
     );
 
     console.log(response.data.message);
-    response.data && navigate("/");
+    toast.success(response.data.message);
+    // response.data && navigate("/");
+    setTimeout(() => {
+      response.data && navigate("/");
+    }, 2000);
   };
 
   return (
     <div className="container">
       <br />
-      <img src={assetImage} width={"650px"} height={"350px"} />
+      <img src={assetImage} width={"650px"} height={"350px"} alt="" />
       <br />
       <br />
-      <span>
-        <h5>
-          <FaLaptopCode />
-          Asset ID: {assetid}
-          {/* {stagename} */}
-        </h5>
+
+      <div>
+        <FaLaptopCode />
+        <b>Asset ID: {assetid}</b>
+        {/* {stagename} */}
         {stagename !== "Disposal" ? (
           <>
-            <button className="btn btn-lg btn-dark" onClick={moveToNextStage}>
+            <button
+              className="btn btn-md btn-dark float-right nextStage-btn"
+              onClick={moveToNextStage}
+            >
               Move to Next Stage
-            </button>{" "}
+            </button>
           </>
         ) : null}
-      </span>
+      </div>
+
       <br />
       <div>{!assetDetails ? CustomSpinner() : displayDetailsWithTabs()}</div>
     </div>
