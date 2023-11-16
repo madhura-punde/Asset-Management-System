@@ -26,6 +26,21 @@ asset.
 1. Fronyend - ReactJS, Bootstrap, Redux
 2. Backend - NodeJS, ExpressJS, Mongodb Atlas
 
+## Process Flow Diagrams designed in Figma
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/952dcb74-969e-4b46-904d-94f04a85bc26)
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/82f03015-498f-4c3c-8d7a-1a24504d7d8f)
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/b75cc7cc-8c81-4efa-bbf7-6a00fd2a1143)
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/d8f266ab-e16c-48be-8f20-0543250bde0f)
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/13994046-a631-402d-a9e0-46ed0b8cf6f0)
+
+![image](https://github.com/madhura-punde/Asset-Management-System/assets/101276214/66e12f28-5ea7-4bf6-af96-ed8023bf5db0)
+
+
 ### view
 
 Final Overview
